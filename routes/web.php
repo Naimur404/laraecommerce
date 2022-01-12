@@ -13,12 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 // Route::get('/master', function () {
 //     return view('components.master');
 // });
 Route::get('/model', function () {
     return view('tamplate.layout.model');
+});
+
+Route::get('/details', function () {
+    return view('tamplate.layout.details');
 });
