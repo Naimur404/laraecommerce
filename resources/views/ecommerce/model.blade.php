@@ -1,4 +1,7 @@
-<x-master>
+@extends('layout.master')
+@section('content')
+    
+
 
 <div class="modal fade" id="productView" tabindex="-1">
         <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -276,5 +279,4 @@
           </div>
         </section>
       </div>
-
-</x-master>
+@endsection

@@ -21,3 +21,6 @@
 <link rel="stylesheet" href="{{ asset('assets/css/custom.css')}}">
 <!-- Favicon-->
 <link rel="shortcut icon" href="{{ asset('assets/img/favicon.png')}}">
+{{-- <link rel="stylesheet"
+        href="{{asset('assets/material-icon/css/material-design-iconic-font.min.css')}}"> --}}
+            {{-- <link rel="stylesheet" href="{{asset('assets/material-icon/style.css')}}"> --}}

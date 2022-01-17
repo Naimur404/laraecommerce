@@ -13,16 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-// Route::get('/master', function () {
-//     return view('components.master');
-// });
-Route::get('/model', function () {
-    return view('tamplate.layout.model');
+
+Route::get('/master', function () {
+    return view('layout.master');
+});
+Route::get('/', function () {
+    return view('ecommerce.model');
 });
 
 Route::get('/details', function () {
     return view('tamplate.layout.details');
+});
+Route::get('/shop', function () {
+    return view('tamplate.layout.shop');
+});
+Route::get('/checkout', function () {
+    return view('tamplate.layout.checkout');
+});
+Route::get('/cart', function () {
+    return view('tamplate.layout.cart');
+});
+Route::get('/signup', function () {
+    return view('ecommerce.sign_up_form');
+});
+Route::get('/signin', function () {
+    return view('ecommerce.login');
 });
