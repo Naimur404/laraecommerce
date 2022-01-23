@@ -13,7 +13,7 @@
             <div class="signup-form">
                
     
-                <h2 class="form-title">Sign up</h2>
+                <h2 class="form-title">Sign In</h2>
                 <link rel="stylesheet" href="{{asset('assets/material-icon/style.css')}}">
 <link rel="stylesheet"
         href="{{asset('assets/material-icon/css/material-design-iconic-font.min.css')}}">
@@ -44,7 +44,7 @@
              </div> --}}
     
              {!! Form::close() !!}
-                // <!-- <form method="post" action="http://localhost/crud/admin/users/signup_from_store.php"
+                 <!-- <form method="post" action="http://localhost/crud/admin/users/signup_from_store.php"
                 //     enctype="multipart/form-data">
                 //     <div class="form-group">
                 //         <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
