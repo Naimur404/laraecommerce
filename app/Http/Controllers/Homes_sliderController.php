@@ -14,7 +14,8 @@ class Homes_sliderController extends Controller
      */
     public function index()
     {
-        return view('sliders.index');
+        $sliders = Home_slider::all();
+        return view('sliders.index',compact('sliders'));
     }
 
     /**
@@ -25,6 +26,8 @@ class Homes_sliderController extends Controller
     public function create()
     {
         //
+      
+
         return view('sliders.create');
     }
 
@@ -36,7 +39,8 @@ class Homes_sliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Home_slider::create($request->all());
+        return redirect()->route('sliders.index');
     }
 
     /**
@@ -79,8 +83,10 @@ class Homes_sliderController extends Controller
      * @param  \App\Models\Home_slider  $home_slider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Home_slider $home_slider)
+    public function destroy($id)
+
     {
-        //
+        Home_slider::where('id',$id)->delete();
+        dd('sucess');
     }
 }

@@ -5,27 +5,44 @@
 <div class="card-header">
 
     <div class="card-title">Slider List</div>
-    <a href="{{('sliders.create')}}" class="btn btn-sm btn btn-info"></a>
+    <a href="{{route('sliders.create')}}" class="btn btn-sm btn btn-info">Create</a>
 </div>
 <div class="card-body">
 
-    <table class="table-striped">
+    <table class=" table table-striped">
         <thead>
         <tr>
-            <th>#</th>
+            <th>ID</th>
+
             <th>Title</th>
+
             <th>Subtitle</th>
             <th>price</th>
+            <th>Link</th>
             <th>image</th>
             <th>Action</th>
         </tr>
             
         </thead>
         <tbody>
-            <tr>
+            @foreach ($sliders as $slider)
                 
-            </tr>
+            
+            <tr>
+              <th scope ="row">{{$loop->iteration}}</th>
+              <th>{{$slider->title}}</th>
+              <th>{{$slider->subtitle}}</th>
+              <th>{{$slider->price}}</th>  
+              <th>{{$slider->link}}</th>
+              <th>{{$slider->image}}</th>
+              <td>
+                  <a href="{{route('sliders.edit',$slider->id)}}" class="btn btn-info">Edit</a>
+                  
+              </td>
 
+              
+            </tr>
+@endforeach
         </tbody>
     </table>
 </div>

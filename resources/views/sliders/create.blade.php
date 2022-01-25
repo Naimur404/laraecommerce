@@ -1,4 +1,4 @@
-@extends('layout/master')
+@extends('layout.master')
 @section('content')
     
 
@@ -6,10 +6,11 @@
     <div class="crad-header">
         <div class="card-title">Create Slider
         </div>
-        <a href="{{ route('sliders.index') }}" class="btn btn-sm btn-btn-info"></a>
+        <a href="{{route('sliders.index') }}" class="btn btn-sm btn btn-info">Index</a>
     </div>
     <div class="card-body">
-        <form action="{{ route('sliders.store') }}" method="post">
+        <form action="{{route('sliders.store')}}" method="post">
+            @csrf
             <div class="form-group">
                 <label class="col-md-10 control-lebel">Title</label>
                 <div class="col-md-8">
@@ -48,7 +49,7 @@
             <div class="form-group">
                 <label class="col-md-10 control-lebel">Status</label>
                 <div class="col-md-8">
-                    <input type="checkbox" name="status" value="" placeholder="Status" class="from-control" />
+                    <input type="text" name="status" value="" placeholder="Status" class="from-control" />
                 </div>
             </div>
                     <div class="form-group">
