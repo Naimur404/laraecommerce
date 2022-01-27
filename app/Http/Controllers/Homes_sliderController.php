@@ -15,7 +15,7 @@ class Homes_sliderController extends Controller
     public function index()
     {
         $sliders = Home_slider::all();
-        return view('sliders.index',compact('sliders'));
+        return view('sliders.index', compact('sliders'));
     }
 
     /**
@@ -26,7 +26,7 @@ class Homes_sliderController extends Controller
     public function create()
     {
         //
-      
+
 
         return view('sliders.create');
     }
@@ -49,9 +49,9 @@ class Homes_sliderController extends Controller
      * @param  \App\Models\Home_slider  $home_slider
      * @return \Illuminate\Http\Response
      */
-    public function show(Home_slider $home_slider)
+    public function show(Home_slider $slider)
     {
-        //
+        return view('sliders.show', compact('slider'));
     }
 
     /**
@@ -60,9 +60,11 @@ class Homes_sliderController extends Controller
      * @param  \App\Models\Home_slider  $home_slider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Home_slider $home_slider)
+    public function edit($id)
     {
         //
+        $slider = Home_slider::where('id', $id)->first();
+        return view('sliders.edit', compact('slider'));
     }
 
     /**
@@ -72,9 +74,30 @@ class Homes_sliderController extends Controller
      * @param  \App\Models\Home_slider  $home_slider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Home_slider $home_slider)
+    public function update(Request $request,  $id)
     {
-        //
+        $slider = Home_slider::where('id', $id)->first();
+        if ($request->image == "") {
+            $image = $slider->image;
+        } else {
+            $image = $request->image;
+        }
+        
+        $slider->update(
+
+            [
+                'image' => $image,
+                'title' => $request->title,
+                'subtitle' => $request->subtitle,
+                'price' => $request->price,
+                'link' => $request->link,
+                'status' => $request->status,
+
+
+            ]
+        );
+
+        return redirect()->route('sliders.index');
     }
 
     /**
@@ -86,7 +109,8 @@ class Homes_sliderController extends Controller
     public function destroy($id)
 
     {
-        Home_slider::where('id',$id)->delete();
-        dd('sucess');
+        Home_slider::where('id', $id)->delete();
+
+        return redirect()->route('sliders.index');
     }
 }

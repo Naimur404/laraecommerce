@@ -37,7 +37,12 @@
               <th>{{$slider->image}}</th>
               <td>
                   <a href="{{route('sliders.edit',$slider->id)}}" class="btn btn-info">Edit</a>
-                  
+                  <a href="{{route('sliders.show',$slider->id)}}" class="btn btn-info">Show</a>
+                  <form action="{{route('sliders.destroy',$slider->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                  </form>
               </td>
 
               

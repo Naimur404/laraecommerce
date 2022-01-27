@@ -18,6 +18,14 @@ use App\Http\Controllers\Homes_sliderController;
 // // Route::get('/master', function () {
 // //     return view('layout.master');
 // // });
+
+Route::get('/home', function () {
+    return view('backend.home');
+});
+Route::get('/table', function () {
+    return view('backend.table');
+});
+
 // // Route::get('/', function () {
 // //     return view('ecommerce.model');
 // // });
