@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Homes_sliderController;
 
@@ -22,9 +23,11 @@ use App\Http\Controllers\Homes_sliderController;
 Route::get('/home', function () {
     return view('backend.home');
 });
-Route::get('/table', function () {
-    return view('backend.table');
-});
+Route::get('/categories',[CategoryController::class,'index'] )->name('categories.index');
+
+Route::get('/categories/create',[CategoryController::class,'create'])->name('categories.create');
+Route::post('/categories',[CategoryController::class,'store'])->name('categories.store');
+Route::resource('categories',CategoryController::class);
 
 // // Route::get('/', function () {
 // //     return view('ecommerce.model');
